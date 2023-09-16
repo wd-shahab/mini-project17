@@ -1,0 +1,159 @@
+@font-face {
+  font-family: Poppins;
+  src: url(../assets/fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins-Extra";
+  src: url(../assets/fonts/Poppins-ExtraBoldItalic.ttf);
+}
+@font-face {
+  font-family: "Poppins-Italic";
+  src: url(../assets/fonts/Poppins-Italic.ttf);
+}
+
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 13%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--Off-white);
+  font-family: 'Poppins';
+}
+
+.main-container{
+  width: clamp(280px, 50vw, 1000px);
+  margin:1em auto;
+  background: var(--White);
+  padding: 2vw 3vw 1vw;
+  border-radius: 15px 15px 15vw 15px;
+}
+
+form{
+  display: flex;
+  padding-bottom: 35px;
+  border-bottom: 1px solid var(--Light-grey);
+  position: relative;
+}
+
+.input_box{
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
+}
+
+input,
+button{
+  border: none;
+  outline: none;
+}
+
+.input_box input{
+  font-size: clamp(17px, 2vw, 32px);
+  width: clamp(78px, 10vw, 10vw);
+  padding: 10%;
+  border: 1px solid var(--Light-grey);
+  border-radius: 7px;
+  font-family: 'Poppins';
+  transition: all 0.4s;
+}
+
+.input_box input::placeholder{
+  color: var(--Smokey-grey);
+}
+.input_box input:focus{
+  border-color: var(--Purple);
+}
+
+.input_box label{
+  color: var(--Smokey-grey);
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 5px;
+  letter-spacing: 3px;
+  transition: all 0.4s;
+}
+
+.input_box span{
+  color: var(--Light-red);
+  font-size: 12px;
+  font-family: "Poppins-Italic";
+  margin-top: 5px;
+}
+
+.main-content{
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+}
+
+.main-content span{
+  font-family: "Poppins-Extra";
+  font-size: clamp(40px, 5vw, 80px);
+  color: var(--Off-black);
+  letter-spacing: 2px;
+}
+
+.main-content span span{
+  color: var(--Purple);
+}
+
+button i{
+  content: url(../assets/images/icon-arrow.svg);
+}
+
+button{
+  width: clamp(62px, 6vw, 100px);
+  height: clamp(62px, 6vw, 100px);
+  border-radius: 50%;
+  background: var(--Purple);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  translate: 0 50%;
+  transition: background-color .3s;
+}
+
+button:hover{
+  background-color: var(--Off-black);
+}
+
+@media screen and (max-width: 750px) {
+  .main-container{
+    padding: 5%;
+    border-bottom-right-radius: 6em;
+  }
+}
+@media screen and (max-width: 600px) {
+  form{
+    padding-bottom: 45px;
+  }
+  button{
+    right: 50%;
+    translate: 50% 50%;
+  }
+}
+err-res{
+  display: none;
+}
+.error input,
+.error label{
+  border-color: var(--Light-red);
+  color: var(--Light-red);
+}
+.error .err-res{
+  display: block;
+}
